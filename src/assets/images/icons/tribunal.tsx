@@ -1,0 +1,9 @@
+import type { SVGProps } from "react";
+
+export default function IconTribunal(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width={"1em"} height={"1em"} viewBox={"-0.0001 -0.0001 13.3335 13.3335"} fill={"none"} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" {...props}>
+      <path d={"M2 10.6667V6H3.33333V10.6667H2V10.6667M6 10.6667V6H7.33333V10.6667H6V10.6667M0 13.3333V12H13.3333V13.3333H0V13.3333M10 10.6667V6H11.3333V10.6667H10V10.6667M0 4.66667V3.33333L6.66667 0L13.3333 3.33333V4.66667H0V4.66667M2.96667 3.33333H6.66667H10.3667H2.96667V3.33333M2.96667 3.33333H10.3667L6.66667 1.5L2.96667 3.33333V3.33333"} fill={"currentColor"} />
+    </svg>
+  );
+}

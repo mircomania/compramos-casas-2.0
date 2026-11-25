@@ -1,0 +1,10 @@
+.sectionContainer {
+    height: 100svh;
+    padding-top: 70px;
+}
+
+@media (min-width: 992px) {
+    .sectionContainer {
+        padding-top: 92px;
+    }
+}
