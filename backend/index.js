@@ -68,7 +68,7 @@ function validateForm(data) {
         Object.values(utm).some((value) => !fits(value, 255))
     ) return null;
 
-    return { name, phone, email, property, situation, source: utm.utmCampaign || 'compramoscasas' };
+    return { name, phone, email, propiedad: property, situacion: situation, source: utm.utmCampaign || 'compramoscasas' };
 }
 
 app.use('/submit', (req, res, next) => {
