@@ -1,0 +1,161 @@
+.form {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+    align-self: start;
+    padding: clamp(1.15rem, 3.15vw, 2.5rem);
+    border: 1px solid var(--home-border);
+    border-radius: 0.8rem;
+    background: color-mix(in srgb, white 39%, var(--color-white));
+    box-shadow: 0 0.8rem 2.5rem color-mix(in srgb, var(--color-main) 10%, transparent);
+}
+
+.form header {
+    margin-bottom: 0.4rem;
+}
+
+.offer {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    border-radius: 1rem;
+    color: var(--home-orange-ink);
+    background: var(--home-orange-wash);
+    font-size: 0.78rem;
+    font-weight: 750;
+}
+
+.form h2 {
+    margin: 1rem 0 0.3rem;
+    font-size: clamp(1.35rem, 2vw, 1.55rem);
+    font-weight: 800;
+    line-height: 1.17;
+    letter-spacing: -0.025em;
+}
+
+.form header > p:last-child {
+    color: var(--color-black);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+.fields {
+    display: grid;
+    gap: 0.95rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.32rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.control {
+    position: relative;
+    color: var(--home-muted);
+}
+
+.control > svg {
+    position: absolute;
+    inset-inline-start: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.control input,
+.control select {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.55rem 0.7rem 0.55rem 2.55rem;
+    border: 1px solid var(--home-border);
+    border-radius: 0.52rem;
+    background: #f0f1f2;
+    color: var(--text-black);
+    font-size: 16px;
+}
+
+.control input::placeholder,
+.control select:invalid {
+    color: #606873;
+    opacity: 1;
+}
+
+.control select {
+    appearance: none;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.select::after {
+    content: '';
+    position: absolute;
+    right: 0.95rem;
+    top: calc(50% - 0.25rem);
+    width: 0.4rem;
+    height: 0.4rem;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.control [aria-invalid='true'] {
+    border-color: #a72b24;
+}
+
+.error,
+.status {
+    color: #942720;
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.error {
+    margin-top: 0.3rem;
+}
+
+.status:empty {
+    position: absolute;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.5rem;
+    padding: 0.65rem;
+    border: 0;
+    border-radius: 0.7rem;
+    color: white;
+    background: linear-gradient(105deg, var(--color-main), color-mix(in srgb, var(--color-main) 78%, var(--text-black)));
+    box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--color-main) 24%, transparent);
+    font: 800 clamp(1.18rem, 1.85vw, 1.5rem)/1.15 var(--font-heading);
+    cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--color-main) 86%, var(--text-black));
+}
+
+.submit:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.submit svg,
+.guarantee svg {
+    flex: none;
+}
+
+.guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    color: var(--home-muted);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}

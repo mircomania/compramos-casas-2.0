@@ -1,0 +1,152 @@
+.heading {
+    color: var(--home-orange-heading);
+}
+
+.eyebrow {
+    color: var(--text-black);
+    background: color-mix(in srgb, var(--color-black) 6%, var(--color-white));
+}
+
+.eyebrow svg {
+    color: var(--home-orange-ink);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    list-style: none;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 22rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid var(--home-border);
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, white 34%, var(--color-white));
+    box-shadow: 0 2px 3px color-mix(in srgb, var(--shadow-black) 20%, transparent);
+}
+
+.step:last-child {
+    border-color: color-mix(in srgb, var(--color-main) 35%, transparent);
+    background: var(--home-orange-wash);
+}
+
+.step:last-child .stepTop > span:last-child {
+    background: var(--color-main);
+    color: var(--text-black);
+}
+
+.stepTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.number {
+    color: color-mix(in srgb, var(--color-main) 26%, var(--color-white));
+    font: 850 clamp(2.5rem, 4.8vw, 3.75rem)/1 var(--font-heading);
+}
+
+.step:last-child .number {
+    color: color-mix(in srgb, var(--color-main) 54%, var(--color-white));
+}
+
+.step h3,
+.caption h3 {
+    font-size: clamp(1.25rem, 1.95vw, 1.5rem);
+    line-height: 1.17;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.step > p:not(.indicator) {
+    margin-top: 0.38rem;
+    color: var(--color-black);
+    line-height: 1.55;
+}
+
+.indicator {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin-top: auto;
+    padding-top: 1.05rem;
+    color: var(--home-orange-ink);
+    font-size: 0.77rem;
+    line-height: 1.35;
+    font-weight: 750;
+}
+
+.indicator svg,
+.videoLabel svg {
+    flex: none;
+}
+
+.video {
+    --video-play-size: clamp(3rem, 7.5vw, 6rem);
+    --video-play-icon: clamp(1.4rem, 3.2vw, 2.35rem);
+    --video-play-color: var(--color-main);
+    --video-play-background: rgb(0 0 0 / 68%);
+    --video-play-hover: rgb(0 0 0 / 82%);
+    width: min(100%, 56rem);
+    margin: clamp(2rem, 5vw, 4rem) auto 0;
+    box-shadow: 0 0.85rem 1.25rem color-mix(in srgb, var(--shadow-black) 68%, transparent);
+}
+
+.caption {
+    position: absolute;
+    inset: auto 0 0;
+    padding: clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.caption h3 {
+    margin: 0.3rem 0 0.2rem;
+}
+
+.videoLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.16rem 0.48rem;
+    border-radius: 0.9rem;
+    background: rgb(0 0 0 / 66%);
+    font-size: 0.76rem;
+    font-weight: 750;
+}
+
+.videoLabel svg {
+    color: var(--color-main);
+}
+
+@media (max-width: 940px) {
+    .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .step {
+        min-height: 17rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .step {
+        min-height: auto;
+    }
+
+    .video {
+        --video-play-top: 30%;
+        aspect-ratio: 4 / 3;
+    }
+}

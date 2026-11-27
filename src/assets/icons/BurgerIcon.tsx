@@ -6,10 +6,11 @@ interface BurgerIconProps {
     className?: string;
     ariaLabel?: string;
     dataLink?: string;
+    decorative?: boolean;
     onClick?: (event?: MouseEvent<SVGSVGElement> | KeyboardEvent<SVGSVGElement>) => void;
 }
 
-export const BurgerIcon = ({ size = 44, stroke = 1.2, onClick, className = '', ariaLabel = 'Burger menu', dataLink }: BurgerIconProps) => {
+export const BurgerIcon = ({ size = 44, stroke = 1.2, onClick, className = '', ariaLabel = 'Burger menu', dataLink, decorative = false }: BurgerIconProps) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,9 +19,10 @@ export const BurgerIcon = ({ size = 44, stroke = 1.2, onClick, className = '', a
             width={size}
             height={size}
             viewBox="0 0 24 24"
-            role="button"
-            aria-label={ariaLabel}
-            tabIndex={0}
+            role={decorative ? undefined : 'button'}
+            aria-hidden={decorative || undefined}
+            aria-label={decorative ? undefined : ariaLabel}
+            tabIndex={decorative ? undefined : 0}
             {...(dataLink ? { 'data-link': dataLink } : {})}
             onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {

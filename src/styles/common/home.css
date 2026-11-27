@@ -1,0 +1,75 @@
+.home {
+    --home-border: color-mix(in srgb, var(--color-black) 13%, transparent);
+    --home-orange-ink: color-mix(in srgb, var(--color-main) 71%, var(--text-black));
+    --home-orange-heading: color-mix(in srgb, var(--color-main) 94%, var(--text-black));
+    --home-orange-wash: color-mix(in srgb, var(--color-main) 7%, var(--color-white));
+    --home-muted: color-mix(in srgb, var(--color-black) 80%, var(--color-white));
+    color: var(--text-black);
+    background: var(--color-white);
+}
+
+.home-container {
+    width: min(calc(100% - clamp(2rem, 7.5vw, 6rem)), 74rem);
+    margin-inline: auto;
+}
+
+.home-section {
+    padding-block: clamp(3.25rem, 7.5vw, 6rem);
+}
+
+.home-intro {
+    max-width: 48rem;
+    margin: 0 auto clamp(2rem, 5vw, 4rem);
+    text-align: center;
+}
+
+.home-intro h2 {
+    margin: 0.45rem 0 0.3rem;
+    font-size: clamp(2rem, 3.35vw, 2.75rem);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+}
+
+.home-intro > p:not(.home-eyebrow) {
+    color: var(--home-muted);
+    line-height: 1.55;
+}
+
+.home-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 100%;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+    color: var(--home-orange-ink);
+    background: var(--home-orange-wash);
+    font-size: 0.77rem;
+    line-height: 1.35;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.home-eyebrow svg,
+.home-card-icon svg {
+    flex: none;
+}
+
+.home-card-icon {
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.7rem;
+    background: var(--home-orange-wash);
+    color: var(--home-orange-ink);
+    font-size: 1.45rem;
+}
+
+.home :focus-visible {
+    outline: 2px solid var(--home-orange-ink);
+    outline-offset: 3px;
+}

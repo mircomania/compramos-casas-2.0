@@ -19,12 +19,11 @@ export const SmartLink = ({ to, ariaLabel, className, title, children, dataCta, 
 
         if (e.defaultPrevented) return;
 
-        if (location.pathname === to) {
+        if (location.pathname === to && !location.hash && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
             e.preventDefault();
 
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth',
             });
         }
     };

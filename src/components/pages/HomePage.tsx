@@ -9,30 +9,16 @@ import { SectionHp6 } from '../exports/home/SectionHp6';
 
 export function HomePage() {
     return (
-        <main>
+        <main className="home">
+            {/* Pendiente de aprobación: descripción y URL canónica de producción. */}
             <TitleSEO title="Compramos Casas" description="" canonical="" />
 
             <SectionHp1 />
-
-            <section id="funciona">
-                <SectionHp2 />
-            </section>
-
-            <section id="tipos">
-                <SectionHp3 />
-            </section>
-
-            <section id="testimonios">
-                <SectionHp4 />
-            </section>
-
-            <section id="preguntas">
-                <SectionHp5 />
-            </section>
-
-            <section id="oficinas">
-                <SectionHp6 />
-            </section>
+            <SectionHp2 />
+            <SectionHp3 />
+            <SectionHp4 />
+            <SectionHp5 />
+            <SectionHp6 />
         </main>
     );
 }

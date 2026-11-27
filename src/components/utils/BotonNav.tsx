@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavActions } from '../../hooks/useNavActions';
 
 interface BotonNavProps {
     to: string;
@@ -8,41 +8,26 @@ interface BotonNavProps {
     title?: string;
     dataCta?: string;
     dataLink?: string;
+    onAfterNavigate?: () => void;
 }
 
-export const BotonNav = ({ to, ariaLabel, className, title, children, dataCta, dataLink }: BotonNavProps) => {
-    const location = useLocation();
-    const navigate = useNavigate();
+export const BotonNav = ({ to, ariaLabel, className, title, children, dataCta, dataLink, onAfterNavigate }: BotonNavProps) => {
+    const { goTo } = useNavActions();
 
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-
-        const esAncla = to.startsWith('#');
-        const idDestino = to.replace('#', '');
-
-        if (location.pathname === '/' && esAncla) {
-            const targetElement = document.getElementById(idDestino);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth',
-                });
-            }
-        } else if (esAncla) {
-            navigate(`/#${idDestino}`);
-        } else {
-            navigate(to);
-        }
-    };
+    function handleClick() {
+        goTo(to);
+        onAfterNavigate?.();
+    }
 
     return (
         <button
+            type="button"
             onClick={handleClick}
             className={className}
             title={title}
             aria-label={ariaLabel}
-            {...(dataCta ? { 'data-cta': dataCta } : {})}
-            {...(dataLink ? { 'data-link': dataLink } : {})}
+            data-cta={dataCta}
+            data-link={dataLink}
         >
             {children}
         </button>

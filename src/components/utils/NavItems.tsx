@@ -18,22 +18,22 @@ export const NavItems = ({ item, onAfterNavigate }: NavItemsProps) => {
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
         handleNavigation(e, item);
-        onAfterNavigate?.();
+        if (e.defaultPrevented) onAfterNavigate?.();
     };
 
     const commonProps = {
         title: item.title,
-        ...(item.dataLink && { dataLink: item.dataLink }),
-        ...(item.dataCta && { dataCta: item.dataCta }),
         onClick: handleClick,
     };
 
     if (item.type === 'anchor') {
         return (
             <a
-                href={item.to}
+                href={`/${item.to}`}
                 className={isAnchorActive(item) ? 'active' : ''}
-                aria-current={isAnchorActive(item) ? 'page' : undefined}
+                aria-current={isAnchorActive(item) ? 'location' : undefined}
+                data-link={item.dataLink}
+                data-cta={item.dataCta}
                 {...commonProps}
             >
                 {item.label}
@@ -42,7 +42,7 @@ export const NavItems = ({ item, onAfterNavigate }: NavItemsProps) => {
     }
 
     return (
-        <SmartLink to={item.to} {...commonProps}>
+        <SmartLink to={item.to} dataLink={item.dataLink} dataCta={item.dataCta} {...commonProps}>
             {item.label}
         </SmartLink>
     );

@@ -1,0 +1,104 @@
+.offices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.office {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid var(--home-border);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--shadow-black) 23%, transparent);
+}
+
+.office iframe {
+    display: block;
+    width: 100%;
+    height: clamp(12rem, 16vw, 14rem);
+    border: 0;
+    background: color-mix(in srgb, var(--color-black) 5%, var(--color-white));
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.label,
+.hours,
+.directions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.label svg,
+.hours svg,
+.directions svg {
+    flex: none;
+}
+
+.label {
+    color: var(--home-orange-ink);
+    font-size: 0.79rem;
+    font-weight: 750;
+    text-transform: uppercase;
+}
+
+.content h3 {
+    margin: 0.4rem 0 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+}
+
+.office:first-child h3 {
+    text-transform: uppercase;
+}
+
+.content address {
+    color: var(--home-muted);
+    font-style: normal;
+    line-height: 1.55;
+}
+
+.content address span {
+    display: block;
+}
+
+.hours {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.directions {
+    justify-content: center;
+    width: 100%;
+    min-height: 2.75rem;
+    margin-top: 1rem;
+    padding: 0.45rem;
+    border: 1px solid var(--home-border);
+    border-radius: 0.5rem;
+    color: var(--home-orange-ink);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.directions:hover {
+    background: var(--home-orange-wash);
+}
+
+@media (max-width: 640px) {
+    .offices {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

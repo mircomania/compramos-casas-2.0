@@ -1,0 +1,190 @@
+.intro {
+    margin-inline: 0;
+    max-width: 40rem;
+    text-align: left;
+}
+
+.intro h2 {
+    text-wrap: initial;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 19.7rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid var(--color-main);
+    border-radius: 0.75rem;
+}
+
+.card h3 {
+    margin: 1rem 0 0.35rem;
+    font-size: clamp(1.25rem, 1.95vw, 1.5rem);
+    font-weight: 800;
+    line-height: 1.19;
+    letter-spacing: -0.025em;
+}
+
+.card p,
+.documentary p {
+    color: var(--home-muted);
+    line-height: 1.55;
+}
+
+.card .indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 1.1rem;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    font-weight: 750;
+}
+
+.card svg,
+.documentary svg {
+    flex: none;
+}
+
+.contact {
+    border-color: transparent;
+    background: linear-gradient(140deg, var(--text-black), var(--color-black));
+    color: var(--color-white);
+    box-shadow: 0 3px 5px color-mix(in srgb, var(--shadow-black) 65%, transparent);
+}
+
+.contact > span {
+    color: var(--color-main);
+    background: transparent;
+}
+
+.contact p {
+    color: color-mix(in srgb, var(--color-white) 84%, var(--color-black));
+    margin-bottom: 1.25rem;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 100%;
+    min-height: 2.75rem;
+    margin-top: auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--text-black);
+    background: var(--color-main);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 750;
+}
+
+.action:focus-visible {
+    outline-color: white;
+}
+
+.action:hover {
+    background: color-mix(in srgb, var(--color-main) 83%, white);
+}
+
+.documentary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(1.25rem, 2.6vw, 2.5rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding: clamp(1rem, 3.2vw, 2.5rem);
+    border: 1px solid var(--home-border);
+    border-radius: 0.75rem;
+}
+
+.documentary .documentaryLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--home-orange-ink);
+    text-transform: uppercase;
+    font-size: 0.77rem;
+    font-weight: 750;
+}
+
+.documentary h3 {
+    margin: 0.45rem 0 0.65rem;
+    color: var(--home-orange-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.documentary ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+    margin-top: 1rem;
+    list-style: none;
+    font-size: 0.85rem;
+}
+
+.documentary li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.documentary li svg {
+    font-size: 1.1rem;
+}
+
+.video {
+    box-shadow: 0 0.45rem 0.75rem color-mix(in srgb, var(--shadow-black) 68%, transparent);
+}
+
+.documentary .videoLabel {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.35rem;
+    background: rgb(0 0 0 / 70%);
+    color: white;
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+@media (max-width: 940px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+        min-height: 17rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .documentary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card {
+        min-height: auto;
+    }
+}

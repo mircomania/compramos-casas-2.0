@@ -20,9 +20,11 @@ export const Navbar = () => {
 
                 {!isMobile && (
                     <ul className="navbar-menu">
-                        <BotonNav to="/" className="boton-nav" dataCta="navbar-inicio-btn">
-                            Inicio
-                        </BotonNav>
+                        <li>
+                            <BotonNav to="/" className="boton-nav" dataCta="navbar-inicio-btn">
+                                Inicio
+                            </BotonNav>
+                        </li>
 
                         {navbarMenu.map((item) => (
                             <li key={item.id}>

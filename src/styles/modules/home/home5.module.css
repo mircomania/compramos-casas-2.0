@@ -1,0 +1,70 @@
+.heading {
+    color: var(--home-orange-heading);
+}
+
+.eyebrow {
+    color: var(--text-black);
+    background: color-mix(in srgb, var(--color-black) 7%, var(--color-white));
+}
+
+.eyebrow svg {
+    color: var(--home-orange-ink);
+}
+
+.questions {
+    display: grid;
+    gap: 1rem;
+    max-width: 56rem;
+    margin: auto;
+}
+
+.question {
+    border: 1px solid color-mix(in srgb, var(--home-orange-ink) 29%, var(--color-white));
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--color-main) 2%, var(--color-white));
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--shadow-black) 25%, transparent);
+}
+
+.question summary {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: clamp(0.9rem, 2vw, 1.5rem);
+    border-radius: inherit;
+    list-style: none;
+    color: var(--home-orange-ink);
+    font: 780 clamp(1.12rem, 1.95vw, 1.5rem)/1.24 var(--font-heading);
+    letter-spacing: -0.02em;
+    cursor: pointer;
+}
+
+.question summary::-webkit-details-marker {
+    display: none;
+}
+
+.question summary svg,
+.question summary::after {
+    flex: none;
+}
+
+.question summary::after {
+    content: '';
+    width: 0.38em;
+    height: 0.38em;
+    margin-inline-start: auto;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    rotate: 45deg;
+}
+
+.question[open] summary::after {
+    rotate: 225deg;
+}
+
+.question > p {
+    margin-left: clamp(1rem, 10vw, 7.5rem);
+    padding: 1rem clamp(1rem, 2vw, 1.5rem) 1.45rem 1rem;
+    border-left: 4px solid var(--color-main);
+    color: var(--color-black);
+    line-height: 1.63;
+}

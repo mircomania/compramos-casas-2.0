@@ -17,16 +17,19 @@ export const BurgerMenu = () => {
                 aria-controls="mobile-menu"
                 onClick={toggleMenu}
                 className={`burger-menu-container ${isOpen ? 'open' : ''}`}
-                tabIndex={-1}
+                type="button"
+                aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             >
-                <BurgerIcon className="burger-menu-icon" aria-label="Abrir menú de navegación" />
+                <BurgerIcon className="burger-menu-icon" decorative />
             </button>
 
             <div id="mobile-menu" className={`mobile-nav-menu ${isOpen ? 'open' : ''}`}>
                 <ul>
-                    <BotonNav to="/contacto" className="boton-nav" dataCta="burger-inicio-btn">
-                        Inicio
-                    </BotonNav>
+                    <li>
+                        <BotonNav to="/" className="boton-nav" dataCta="burger-inicio-btn" onAfterNavigate={closeMenu}>
+                            Inicio
+                        </BotonNav>
+                    </li>
 
                     {navbarMenu.map((item) => (
                         <li key={item.id}>
