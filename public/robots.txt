@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www..com/sitemap.xml
+Sitemap: https://compramoscasas.com.mx/sitemap.xml

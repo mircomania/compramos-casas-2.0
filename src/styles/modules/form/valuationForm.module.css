@@ -149,6 +149,10 @@
     flex: none;
 }
 
+.guarantee svg {
+    color: var(--color-success);
+}
+
 .guarantee {
     display: flex;
     align-items: center;

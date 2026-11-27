@@ -83,19 +83,19 @@
     margin-top: auto;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    color: var(--text-black);
-    background: var(--color-main);
+    color: var(--color-white);
+    background: color-mix(in srgb, var(--color-main) 73%, var(--text-black));
     text-align: center;
     font-size: 0.85rem;
     font-weight: 750;
 }
 
-.action:focus-visible {
-    outline-color: white;
+a.action:focus-visible {
+    outline-color: var(--color-white);
 }
 
 .action:hover {
-    background: color-mix(in srgb, var(--color-main) 83%, white);
+    background: color-mix(in srgb, var(--color-main) 66%, var(--text-black));
 }
 
 .documentary {
@@ -144,6 +144,7 @@
 }
 
 .documentary li svg {
+    color: var(--color-success);
     font-size: 1.1rem;
 }
 

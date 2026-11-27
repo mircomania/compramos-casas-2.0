@@ -6,7 +6,11 @@ import { BotonNav } from '../utils/BotonNav';
 function ErrorPage() {
     return (
         <main>
-            <TitleSEO title="Compramos Casas | Error" description="Lo sentimos, la página que buscas no existe." metaNoIndex={true} />
+            <TitleSEO
+                title="Página no encontrada | Compramos Casas"
+                description="Lo sentimos, la página que buscas no existe o ya no está disponible."
+                metaNoIndex={true}
+            />
 
             <section className={styles.sectionContainer}>
                 <header className={styles.sectionTitulo}>

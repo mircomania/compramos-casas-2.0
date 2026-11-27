@@ -37,7 +37,7 @@
 
 .step:last-child .stepTop > span:last-child {
     background: var(--color-main);
-    color: var(--text-black);
+    color: var(--color-white);
 }
 
 .stepTop {

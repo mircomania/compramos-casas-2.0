@@ -1,3 +1,4 @@
+import { homeSeo } from '../../utils/siteSeo';
 import { TitleSEO } from '../../utils/TitleSEO';
 
 import { SectionHp1 } from '../exports/home/SectionHp1';
@@ -10,8 +11,7 @@ import { SectionHp6 } from '../exports/home/SectionHp6';
 export function HomePage() {
     return (
         <main className="home">
-            {/* Pendiente de aprobación: descripción y URL canónica de producción. */}
-            <TitleSEO title="Compramos Casas" description="" canonical="" />
+            <TitleSEO {...homeSeo} />
 
             <SectionHp1 />
             <SectionHp2 />
