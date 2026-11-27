@@ -89,7 +89,7 @@ export const ValuationForm = () => {
                 {isSubmitting ? 'Enviando solicitud…' : 'Solicitar mi valuación'}
                 <IconFlechaDer />
             </button>
-            <p className={styles.status} role="status">{status}</p>
+            <p className={status?.type === 'success' ? styles.success : styles.status} role="status">{status?.message}</p>
             <p className={styles.guarantee}><IconCheckVerde /> Sin compromiso de venta ni costos ocultos</p>
         </form>
     );

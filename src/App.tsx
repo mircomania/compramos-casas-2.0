@@ -7,6 +7,7 @@ import { Footer } from './components/common/Footer';
 
 import { Cargando } from './components/utils/Cargando';
 import { ScrollToTop } from './utils/scrollToTop';
+import { useValuationAttribution } from './hooks/useValuationForm';
 
 const PrivacyPage = lazy(() => import('./components/pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./components/pages/TermsPage'));
@@ -14,6 +15,8 @@ const NotarialSecurityPage = lazy(() => import('./components/pages/NotarialSecur
 const ErrorPage = lazy(() => import('./components/pages/ErrorPage'));
 
 function App() {
+    useValuationAttribution();
+
     return (
         <>
             <ScrollToTop />
