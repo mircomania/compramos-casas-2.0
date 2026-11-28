@@ -2,6 +2,7 @@
     display: grid;
     gap: 1rem;
     min-width: 0;
+    container-type: inline-size;
     align-self: start;
     padding: clamp(1.15rem, 3.15vw, 2.5rem);
     border: 1px solid var(--home-border);
@@ -39,8 +40,14 @@
 }
 
 .fields {
+    --field-gap: 2.25rem;
     display: grid;
-    gap: 0.95rem;
+    gap: var(--field-gap);
+    padding-block-end: calc(var(--field-gap) - 1rem);
+}
+
+.field {
+    position: relative;
 }
 
 .field label {
@@ -104,9 +111,9 @@
     border-color: #a72b24;
 }
 
-.error,
 .status,
 .success {
+    min-block-size: 4.3em;
     font-size: 0.82rem;
     line-height: 1.4;
 }
@@ -121,11 +128,22 @@
 }
 
 .error {
-    margin-top: 0.3rem;
+    position: absolute;
+    inset-block-start: calc(100% + 0.1875rem);
+    inset-inline: 0;
+    font-size: 0.75rem;
+    line-height: 1.25;
 }
 
-.status:empty {
-    position: absolute;
+@container (min-width: 19rem) {
+    .fields {
+        --field-gap: 1.375rem;
+    }
+
+    .status,
+    .success {
+        min-block-size: 2.9em;
+    }
 }
 
 .submit {
