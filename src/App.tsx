@@ -19,8 +19,6 @@ function App() {
 
     return (
         <>
-            <ScrollToTop />
-
             <Navbar />
 
             <Suspense
@@ -30,6 +28,7 @@ function App() {
                     </main>
                 }
             >
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/politica-privacidad" element={<PrivacyPage />} />

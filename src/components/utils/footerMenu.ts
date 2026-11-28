@@ -17,12 +17,4 @@ export const footerMenu: NavItem[] = [
         dataLink: 'footer-terminos-link',
         type: 'route',
     },
-    {
-        id: 'seguridad',
-        to: '/seguridad-notarial',
-        label: 'Seguridad Notarial',
-        title: 'Conoce la seguridad notarial',
-        dataLink: 'footer-seguridad-link',
-        type: 'route',
-    },
 ];
